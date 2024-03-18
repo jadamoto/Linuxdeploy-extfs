@@ -1,0 +1,9 @@
+#SOURCE                                #TARGET                                 #MOUNT_OPT #UMOUNT_OPT
+/dev/block/mmcblk0p1                   $TARGET_PATH/home                       -t\ ext4   -l
+$TARGET_PATH/home/$USER_NAME           /storage/emulated/0/Home                -o\ bind 
+$TARGET_PATH/home/$USER_NAME/Documenti /storage/emulated/0/Documents           -o\ bind 
+$TARGET_PATH/home/$USER_NAME/Foto      /storage/emulated/0/Pictures            -o\ bind 
+$TARGET_PATH/home/$USER_NAME/Musica    /storage/emulated/0/Music               -o\ bind 
+$TARGET_PATH/etc/hosts                 /etc/hosts                              -o\ bind   -l 
+/storage/emulated/0                    $TARGET_PATH/home/android               -o\ bind 
+/storage/emulated/0/Download           $TARGET_PATH/home/$USER_NAME/Scaricati  -o\ bind 

@@ -1,0 +1,31 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:          extfs
+# Required-Start:    $network $local_fs $remote_fs
+# Required-Stop:     $network $local_fs $remote_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Mount external file system
+# Description: Mount external file system
+### END INIT INFO
+
+
+case $1 in
+	start|status|umount)
+		cp /etc/hostname /proc/sys/kernel/hostname
+		unchroot su --mount-master -c extfs.sh $1
+		exit 0
+		;;
+	restart)
+		unchroot su --mount-master -c extfs.sh umount
+		unchroot su --mount-master -c extfs.sh start
+		exit 0
+		;;
+	*)
+		echo "Usage: /etc/init.d/extfs {start|status|restart|umount}"
+		exit 0
+		;;
+esac
+
+exit 0
