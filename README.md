@@ -1,1 +1,1 @@
-Mount & unmount external file system on Linuxdeploy
+Mount and unmount external file system on Linuxdeploy
