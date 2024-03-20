@@ -1,6 +1,6 @@
 <H2>Mount and unmount external file system on Linuxdeploy</H2>
-I bought a Motorola g32 with a 1 tera sd card with Android 13.<BR>
-My idea was to have a really powerful Linux computer fully integrated with Android. But it is much more difficult to achieve than I thought, so I would like to share my work with everyone who is interested in doing the same thing. 
+I bought a Motorola g32 with a 1 tera sd card.<BR>
+My idea was to have a really powerful Linux computer fully integrated with Android 13. But it is much more difficult to achieve than I thought, so I would like to share my work with everyone who is interested in doing the same thing. 
 
 <H3>1. Install Linuxdeploy</H3>
 
@@ -18,8 +18,8 @@ The script run on Linuxdeploy outside its <I>chroot</I> thanks to <I>unchroot</I
 In the <I>extfstab</I> file there is a configuration like example.<BR>
 The file is <I>fstab</I> like with four parameter: source, target-directory, mount-option and unmount-option.<BR>
 If a parameter contain space, it must escaped with \ .<BR>
-The environment variables $USER_NAME and $TARGET_PATH are initialized with the values of the <CODE>User</CODE> and <CODE>Installation path</CODE> parameters specified in the Properties profile.
-The mount commands are executed in the same order specified in the file, the umount command are executed in the reverse order. 
+The environment variables $USER_NAME and $TARGET_PATH are initialized with the values of the <CODE>User</CODE> and <CODE>Installation path</CODE> parameters specified in the Properties profile.<BR>
+The <I>mount</I> commands are executed in the same order as specified in the file, while <I>umount</I> commands are executed in the reverse order.
 
 <H4>Install extfs</H4>
 Copy <I>extfs.sh</I> in /data/data/ru.meefik.linuxdeploy/bin directory.<BR>
