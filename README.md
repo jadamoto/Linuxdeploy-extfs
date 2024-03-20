@@ -29,4 +29,4 @@ Type the command: <CODE>su - -c 'update-rc.d extfs defaults'</CODE> for install 
 
 <H3>3. Share files with Android</H3>
 
-In Android every app is like an user and is ownner of his files, then in Linuxdeploy, to share files with Android, you have to add the <I>user</I> to the <I>aid_everybody</I> group whith the command: <CODE>usermod -a -G aid_everybody \<user\></CODE>
+In Android every app is like an user and is the ownner of his files, then in Linuxdeploy, to share files with Android, you have to add the <I>user</I> to the <I>aid_everybody</I> group whith the command: <CODE>usermod -a -G aid_everybody \<user\></CODE>
