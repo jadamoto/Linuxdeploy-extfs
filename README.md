@@ -26,3 +26,7 @@ Copy <I>extfs.sh</I> in /data/data/ru.meefik.linuxdeploy/bin directory.<BR>
 Copy inside Linuxdeploy <I>extf</I> in /etc/init.d and <I>extfstab</I> in /etc<BR>
 Make sure the owner and the group of the files is <I>root</I> and the two script have execution permission.<BR>
 Type the command: <CODE>su - -c 'update-rc.d extfs defaults'</CODE> for install <I>extfs</I> System-V init script.<BR>
+
+<H3>3. Share files with Android</H3>
+
+In Android every app is like an user and is ownner of his files, then in Linuxdeploy, to share files with Android, you have to add the <I>user</I> to the <I>aid_everybody</I> group whith the command: <CODE>usermod -a -G aid_everybody \<user\></CODE>
