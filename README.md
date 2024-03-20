@@ -1,6 +1,5 @@
 <H1>Mount and unmount external file system on Linuxdeploy</H1>
-I bought a Motorola g32 with a 1 tera sd card with Android 13.<BR>
-My idea was to have a really powerful Linux computer fully integrated with Android.
+I bought a Motorola g32 with a 1 tera sd card with Android 13.<BR>e
 But it is much more difficult to achieve than I thought, so I would like to share my work with everyone who is interested in doing the same thing.
 
 <H3>1. Install Linuxdeploy</H3>
@@ -13,4 +12,8 @@ In the Properties profile, it is possible to specify a list of mount points in w
 This is very limited because the mount points are not visible outside Linuxdeploy and it is not possible to mount Linuxdeploy directories or files on Android.
 Furthermore, in Android 13, system partitions are locked in <I>ro</I> and it is therefore not possible to write scripts to mount anything.<BR>
 I then wrote a bash script (<I>extfs.sh</I>) to mount everything I need.<BR>
-The script runs on Linuxdeploy outside its <I>chroot</I> thanks to  <I>unchroot</I> command and mounts block-devices, directories and files, specified in the <I>extfstab</I> file in the global mount namespace thanks to <I>su</I> with the <I>--mount-master</I> option.
+The script runs on Linuxdeploy outside its <I>chroot</I> thanks to  <I>unchroot</I> command and mount block-devices, directories and files, specified in the <I>extfstab</I> file, in the global mount namespace thanks to <I>su</I> with the <I>--mount-master</I> option.
+
+<H4>Install extfs</H4>
+Copy <I>extfs.sh</I> in /data/data/ru.meefik.linuxdeploy/bin directory.<BR>
+Copy inside Linuxdeploy <I>extf</I> in /etc/init.d and <I></I>
