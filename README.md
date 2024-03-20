@@ -4,7 +4,7 @@ But it is much more difficult to achieve than I thought, so I would like to shar
 
 <H3>1. Install Linuxdeploy</H3>
 
-On the Properties profile I chose the <CODE>Installation type</CODE> <CODE>Directory</CODE> to use my 1 tera sd card formatted in ext4, specifying as <CODE>Installation path</CODE> a subdirectory of Linuxdeploy (<I>/data/data/ru.meefik.linuxdeploy/<my-directory></I>) so that I could reinstall Linuxdeploy without losing the sd card data or I could create several profiles sharing the same /home directory.<BR>
+On the Properties profile I chose the <CODE>Installation type</CODE> <CODE>Directory</CODE> to use my 1 tera sd card formatted in ext4, specifying as <CODE>Installation path</CODE> a subdirectory of Linuxdeploy (<I>/data/data/ru.meefik.linuxdeploy/\<my-directory\></I>) so that I could reinstall Linuxdeploy without losing the sd card data or I could create several profiles sharing the same /home directory.<BR>
 I also enable custom scripts with <CODE>Init system</CODE> <CODE>sysv</CODE>
 
 <H3>2. Mount file system</H3>
@@ -16,7 +16,7 @@ The script runs on Linuxdeploy outside its <I>chroot</I> thanks to  <I>unchroot<
 <H4>Edit extfstab</H4>
 In the <I>extfstab</I> file there is my personal configuration like example.<BR>
 The file is <I>fstab</I> like with four parameter: SOURCE, TARGET, MOUNT_OPT and UMOUNT_OPT.<BR>
-If a parameter contain space, it must escaped with \.<BR>
+If a parameter contain space, it must escaped with \ .<BR>
 The environment variables $USER_NAME and $TARGET_PATH are initialized with the values of the <CODE>User</CODE> and <CODE>Installation path</CODE> parameters specified in the Properties profile.
 
 <H4>Install extfs</H4>
