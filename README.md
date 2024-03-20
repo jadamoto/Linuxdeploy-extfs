@@ -16,4 +16,6 @@ The script runs on Linuxdeploy outside its <I>chroot</I> thanks to  <I>unchroot<
 
 <H4>Install extfs</H4>
 Copy <I>extfs.sh</I> in /data/data/ru.meefik.linuxdeploy/bin directory.<BR>
-Copy inside Linuxdeploy <I>extf</I> in /etc/init.d and <I></I>
+Copy inside Linuxdeploy <I>extf</I> in /etc/init.d and <I>extfstab</I> in /etc<BR>
+Make sure the owner and group of the files is <I>root</I> and the two script have execution permission.<BR>
+
