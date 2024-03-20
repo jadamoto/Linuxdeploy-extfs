@@ -15,6 +15,7 @@ I then wrote a bash script to mount everything I need.<BR>
 The script run on Linuxdeploy outside its <I>chroot</I> thanks to <I>unchroot</I> command and mount block-devices, directories and files, specified in the <I>extfstab</I> file, in the global mount namespace thanks to <I>su</I> with the <I>--mount-master</I> option.
 
 <H4>Edit extfstab</H4>
+
 In the <I>extfstab</I> file there is a configuration like example.<BR>
 The file is <I>fstab</I> like with four parameter: source, target-directory, mount-option and unmount-option.<BR>
 If a parameter contain space, it must escaped with \ .<BR>
@@ -22,12 +23,14 @@ The environment variables $USER_NAME and $TARGET_PATH are initialized with the v
 The <I>mount</I> commands are executed in the same order as specified in the file, while <I>umount</I> commands are executed in the reverse order.
 
 <H4>Install extfs</H4>
-Copy <I>extfs.sh</I> in /data/data/ru.meefik.linuxdeploy/bin directory.<BR>
-Copy inside Linuxdeploy <I>extf</I> in /etc/init.d and <I>extfstab</I> in /etc<BR>
-Make sure the owner and the group of the files is <I>root</I> and the two script have execution permission.<BR>
-Type the command: <CODE>su - -c 'update-rc.d extfs defaults'</CODE> for install <I>extfs</I> System-V init script.<BR>
+<UL>
+<LI>Copy <I>extfs.sh</I> in /data/data/ru.meefik.linuxdeploy/bin directory.</LI>
+<LI>Copy inside Linuxdeploy <I>extf</I> in /etc/init.d and <I>extfstab</I> in /etc</LI>
+<LI>Make sure the owner and the group of the files is <I>root</I> and the two script have execution permission.</LI>
+<LI>Type the command: <CODE>su - -c 'update-rc.d extfs defaults'</CODE> for install <I>extfs</I> System-V init script.</LI>
+</UL>
 
 <H3>3. Share files with Android</H3>
 
-In Android every app like an user are the owner of his files and shares them with other apps via the <I>everybody</I> group, then in Linuxdeploy you have to add the <I>user</I> to the <I>aid_everybody</I> group whith the command: <CODE>su -c 'usermod -a -G aid_everybody \<user\>'</CODE>and set the group on the existing files and directories you want to share with the correct permissions.
+In Android every app like an user are the owner of his files and shares them with other apps via the <I>everybody</I> group, then in Linuxdeploy you have to add the <I>user</I> to the <I>aid_everybody</I> group whith the command: <CODE>su -c 'usermod -a -G aid_everybody \<user\>'</CODE> and set the <I>aid_everybody</I> group on the existing files and directories you want to share with the correct permissions.
 
