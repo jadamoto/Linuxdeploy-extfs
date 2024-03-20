@@ -33,5 +33,5 @@ The <I>mount</I> commands are executed in the same order as specified in the fil
 <H3>3. Share files with Android</H3>
 
 In Android every app like a user are the owner of his files and shares them with other apps via the <I>everybody</I> group, then in Linuxdeploy you have to add the <I>user</I> to the <I>aid_everybody</I> group with the command: <CODE>su -c 'usermod -a -G aid_everybody \<user\>'</CODE> and set the <I>aid_everybody</I> group on the existing files and directories you want to share with the correct permissions.<BR>
-To make sure that new files are created by Linudeploy with the group <I>aid_everybody</I> you must set the </I>Stiky bit</I> on the directories you wanto to share with the command: <CODE>chmod g+s \<directory\></CODE>
+To make sure that new files are created by Linudeploy with the group <I>aid_everybody</I> you must set the <I>Stikcy Bit</I> on the directories you want to share with the command: <CODE>chmod g+s \<directory\></CODE>
 
