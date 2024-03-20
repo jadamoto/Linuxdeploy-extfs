@@ -10,14 +10,14 @@ I also enable custom scripts with <CODE>Init system</CODE> <CODE>sysv</CODE>
 <H3>2. Mount file system</H3>
 
 In the Properties profile, it is possible to specify a list of mount points in which to specify blocks-devices, directories or files outside of chroot that will be mounted in its namespace when Linuxdeploy start.<BR>
-This is very limited because the mount points are not visible outside Linuxdeploy and it is not possible to mount Linuxdeploy directories or files on Android.
-Furthermore, in Android 13, system partitions are locked in <I>ro</I> and it is therefore not possible to write scripts to mount anything.<BR>
-I then wrote a bash script (<I>extfs.sh</I>) to mount everything I need.<BR>
+This is very limited because the mount points mount everything I need.<BR>
 The script runs on Linuxdeploy outside its <I>chroot</I> thanks to  <I>unchroot</I> command and mount block-devices, directories and files, specified in the <I>extfstab</I> file, in the global mount namespace thanks to <I>su</I> with the <I>--mount-master</I> option.
 
 <H4>Edit extfstab</H4>
 In the <I>extfstab</I> file there is my personal configuration like example.<BR>
-The file is <I>fstab</I> like with four parameter: SOURCE, TARGET, MOUNT_OPT and UMOUNT_OPT
+The file is <I>fstab</I> like with four parameter: SOURCE, TARGET, MOUNT_OPT and UMOUNT_OPT.<BR>
+If a parameter contain space, it must escaped with \.<BR>
+The environment variables $USER_NAME and $TARGET_PATH are loaded from the Linuxdeploy config profile with the values specified in <CODE>User</CODE> and <CODEInstallation path></CODE>.
 
 <H4>Install extfs</H4>
 Copy <I>extfs.sh</I> in /data/data/ru.meefik.linuxdeploy/bin directory.<BR>
