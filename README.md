@@ -25,7 +25,7 @@ The <I>mount</I> commands are executed in the same order as specified in the fil
 <H4>Install extfs</H4>
 <UL>
 <LI>Copy <I>extfs.sh</I> in /data/data/ru.meefik.linuxdeploy/bin directory.</LI>
-<LI>Copy inside Linuxdeploy <I>extf</I> in /etc/init.d and <I>extfstab</I> in /etc</LI>
+<LI>Copy inside Linuxdeploy <I>extf</I> in /etc/init.d and <I>extfstab</I> in /etc directories</LI>
 <LI>Make sure the owner and the group of the files is <I>root</I> and the two script have execution permission.</LI>
 <LI>Type the command: <CODE>su - -c 'update-rc.d extfs defaults'</CODE> for install <I>extfs</I> System-V init script, so that <I>extfs.sh</I> will be executed when Linuxdeploy is loaded.</LI>
 </UL>
