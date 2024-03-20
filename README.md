@@ -1,4 +1,4 @@
-<H2>Mount and unmount external file system on Linuxdeploy</H2>
+<H1>Mount external file system on Linuxdeploy</H1>
 I bought a Motorola g32 with a 1 tera sd card.<BR>
 My idea was to have a really powerful Linux computer fully integrated with Android 13. But it is much more difficult to achieve than I thought, so I would like to share my work with everyone who is interested in doing the same thing. 
 
