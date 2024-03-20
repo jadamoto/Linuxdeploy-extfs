@@ -18,5 +18,5 @@ The script runs on Linuxdeploy outside its <I>chroot</I> thanks to  <I>unchroot<
 Copy <I>extfs.sh</I> in /data/data/ru.meefik.linuxdeploy/bin directory.<BR>
 Copy inside Linuxdeploy <I>extf</I> in /etc/init.d and <I>extfstab</I> in /etc<BR>
 Make sure the owner and the group of the files is <I>root</I> and the two script have execution permission.<BR>
-Type the command: su - -c 'update-rc.d extfs defaults' for install <I>extfs</I> System-V init script.<BR>
+Type the command: <CODE>su - -c 'update-rc.d extfs defaults'</CODE> for install <I>extfs</I> System-V init script.<BR>
 
