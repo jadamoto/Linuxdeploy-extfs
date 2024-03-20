@@ -10,12 +10,12 @@ I also enable custom scripts with <CODE>Init system</CODE> <CODE>sysv</CODE>
 <H3>2. Mount file system</H3>
 
 In the Properties profile, it is possible to specify a list of mount points in which to specify blocks-devices, directories or files outside of chroot that will be mounted in its namespace when Linuxdeploy start.<BR>
-This is very limited because the mount points are not visible outside Linuxdeploy and it is not possible to mount Linuxdeploy directories or files on Android. Furthermore, in Android 13, system partitions are locked in ro and it is therefore not possible to write scripts to mount anything.
+This is very limited because the mount points are not visible outside Linuxdeploy and it is not possible to mount Linuxdeploy directories or files on Android. Furthermore, in Android 13, system partitions are locked in <I>read-only</I> and it is therefore not possible to run scripts to mount anything.
 mount everything I need.<BR>
-The script runs on Linuxdeploy outside its <I>chroot</I> thanks to  <I>unchroot</I> command and mount block-devices, directories and files, specified in the <I>extfstab</I> file, in the global mount namespace thanks to <I>su</I> with the <I>--mount-master</I> option.
+The script runs on Linuxdeploy outside its <I>chroot</I> thanks to <I>unchroot</I> command and mount block-devices, directories and files, specified in the <I>extfstab</I> file, in the global mount namespace thanks to <I>su</I> with the <I>--mount-master</I> option.
 
 <H4>Edit extfstab</H4>
-In the <I>extfstab</I> file there is my personal configuration like example.<BR>
+In the <I>extfstab</I> file there is a configuration like example.<BR>
 The file is <I>fstab</I> like with four parameter: SOURCE, TARGET, MOUNT_OPT and UMOUNT_OPT.<BR>
 If a parameter contain space, it must escaped with \ .<BR>
 The environment variables $USER_NAME and $TARGET_PATH are initialized with the values of the <CODE>User</CODE> and <CODE>Installation path</CODE> parameters specified in the Properties profile.
@@ -25,4 +25,3 @@ Copy <I>extfs.sh</I> in /data/data/ru.meefik.linuxdeploy/bin directory.<BR>
 Copy inside Linuxdeploy <I>extf</I> in /etc/init.d and <I>extfstab</I> in /etc<BR>
 Make sure the owner and the group of the files is <I>root</I> and the two script have execution permission.<BR>
 Type the command: <CODE>su - -c 'update-rc.d extfs defaults'</CODE> for install <I>extfs</I> System-V init script.<BR>
-
