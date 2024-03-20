@@ -17,7 +17,7 @@ The script runs on Linuxdeploy outside its <I>chroot</I> thanks to  <I>unchroot<
 In the <I>extfstab</I> file there is my personal configuration like example.<BR>
 The file is <I>fstab</I> like with four parameter: SOURCE, TARGET, MOUNT_OPT and UMOUNT_OPT.<BR>
 If a parameter contain space, it must escaped with \.<BR>
-The environment variables $USER_NAME and $TARGET_PATH are initialized with the values specified in the <CODE>User</CODE> and <CODE></CODE>Installation path</CODE> parameters typed in the Properties profile.
+The environment variables $USER_NAME and $TARGET_PATH are initialized with the values specified in the <CODE>User</CODE> and <CODE>Installation path</CODE> parameters typed in the Properties profile.
 
 <H4>Install extfs</H4>
 Copy <I>extfs.sh</I> in /data/data/ru.meefik.linuxdeploy/bin directory.<BR>
